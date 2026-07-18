@@ -1,0 +1,85 @@
+// Final approved allowlist from the CSV migration. Only these canonical fields
+// may cross from RTG to Dynasty. Unknown live-schema fields remain untouched.
+export const TRANSFER_FIELDS = Object.freeze(`
+PLYR_ASSETNAME PLYR_HOME_TOWN LastName GenericHeadAssetName FirstName
+PT_HBELUSIVEBACK BaseNILValue PresentationId PT_HBELUSIVEPOWER PLYR_PORTRAIT
+PLYR_BIRTHDATE PT_HBPOWERBACK PLYR_COMMENT DeepRouteRunningRating
+TraitDevelopment PlayerVisMoveType Weight PLYR_GENERICHEAD PLYR_STYLE
+PLYR_QBSTYLE PLYR_HANDEDNESS CaptainsPatch CurrentNILCompensation
+PortraitSwappableLibraryPath
+PLYR_TENDENCY AbsoluteTransferChance AbsoluteGoProChance AgilityRating
+PlayActionRating AccelerationRating PlayerType PassBlockPowerRating
+AwarenessRating PassBlockRating OverallRating PassBlockFinesseRating
+BCVisionRating BreakTackleRating FinesseMovesRating BreakSackRating
+BlockSheddingRating ManCoverageRating MediumRouteRunningRating
+ChangeOfDirectionRating Height CatchingRating LongSnapRating
+CatchInTrafficRating CharacterBodyType KickReturnRating HitPowerRating
+CarryingRating LeadBlockRating Personality JukeMoveRating JumpingRating
+KickAccuracyRating KickPowerRating InjuryRating ImpactBlockingRating JerseyNum
+ThrowAccuracyDeepRating ThrowAccuracyMidRating ThrowAccuracyRating
+ThrowAccuracyShortRating ThrowOnTheRunRating StiffArmRating StrengthRating
+TackleRating SpectacularCatchRating SpeedRating SpinMoveRating StaminaRating
+RecruitingDealbreaker ToughnessRating ThrowUnderPressureRating
+ThrowPowerRating ShortRouteRunningRating RunBlockFinesseRating
+RunBlockPowerRating RunBlockRating TruckingRating PowerMovesRating PressRating
+PursuitRating ReleaseRating PLYR_STANCE PLYR_CELEBRATION
+PlayRecognitionRating ZoneCoverageRating PT_HBPOWERBLOCKING PLYR_HOME_STATE
+Position IronManPosition PLYR_SLEEVETEMPERATURE PhysicalAbility3
+PLYR_CONSECYEARSWITHTEAM HomePipeline Age SkillGroupCap3 SkillGroupCap4
+SkillGroupCap5 SkillGroupCap6 RedshirtStatus MentalAbility3
+RunningStyleRating Scheme IdealRecruitingPitch SkillGroupCap1 SkillGroupCap2
+MentalAbility1 MentalAbility2 Motivation2 Motivation1 MentalAbilityRank2
+SchoolYear MentalAbilityRank3 PhysicalAbility1 PhysicalAbility4
+PhysicalAbility5 PhysicalAbility2 Motivation3 PT_POWERRUSHER PT_PLAYBALL
+PT_PUNCHITOUT PT_QBBACKFIELDCREATOR PT_QBCOMMIT PT_PARANOID
+PT_PANICBUTTON PT_OBLIVIOUS PT_QBDUALTHREAT
+PT_QBDYNAMICPERFORMANCEBACKFIELDCREATOR PT_NOSEDIVE PT_LOOKFORSTARS
+PT_LONGARMOFTHELAW PT_LBRUNSUPPORT PT_LBPASSCOVERAGE PT_LBFIELDGENERAL
+PT_INVINCIBLE PT_HIGHLIGHTREEL PT_HEROBALL PT_HBRECEIVINGBACK
+PT_HBPOWERRECEIVING ProspectStarRating MentalAbilityRank1 IsImpactPlayer
+PT_28_3 PT_AGGRESSIVERECEIVER PT_ANCHORED PT_BIGHITTER PT_BOUNCER
+PT_BULLISH PT_CANNON PT_CANNONBALL PT_CONSERVATIVE PT_COVERBALL
+PT_DISCIPLINED PT_DLPOWERRUSHER PT_DLPUREPOWER PT_DLRUNSTOPPER
+PT_DLSPEEDRUSHER PT_DOUBLEBACK PT_ELUSIVEINSTINCT PT_EYESUP
+PT_FINESSERUSHER PT_FLYSWATTER PT_FORTIFIER PT_FREEPLAYFINDER
+PT_FREESTYLER PT_FROZENSOLID PT_GASGUZZLER PT_HAPPYFEET
+PT_PLAYRECEIVER PT_POSSESSIONRECEIVER PT_REDZONEJAMMER PT_RACRECEIVER
+PT_QUICKTRIGGER PT_QUICKCLOCK PT_QBPURERUNNER PT_QBPOCKETPASSER
+PT_QBDYNAMICPERFORMANCEPURERUNNER PT_QBDYNAMICPERFORMANCEPOCKETPASSER
+PT_QBDYNAMICPERFORMANCEDUALTHREAT PT_THROWITUP PT_TRAVELINGSHOWMEN
+PT_TWISTER PT_UNDERCUT PT_UNDISCIPLINED PT_UNUSEDTRAIT1 PT_UNUSEDTRAIT2
+PT_UPANDOVER PT_WHIRLWIND PT_WRELUSIVEROUTERUNNER PT_WRGADGET
+PT_WRPHYSICALBLOCKER PT_WRPHYSICALRECEIVER PT_WRPHYSICALROUTERUNNER
+PT_WRPLAYMAKER PT_WRPOWERBLOCKING PLYR_ISCAPTAIN PortraitForceSilhouette
+IsNIL PT_THROWAWAY PT_TEVERTICALTHREAT PT_TEPHYSICALROUTERUNNER
+PT_TEPHYSICALBLOCKER PT_TEBLOCKING PT_STRONGARM PT_STEERINGCLEAR
+PT_SRUNSUPPORT PT_SNOWBALL PT_SNAPMISCHIEF PT_SHOWBOAT PT_SEEINGGHOSTS
+PT_SAFETACKLER PT_RUNOVER PT_RISKTAKER PT_RIPCORD
+`.trim().split(/\s+/));
+
+// These known fields are intentionally preserved on the target roster slot.
+// This list is also used by validation to guard save identity and live state.
+export const PRESERVED_FIELDS = Object.freeze(`
+CharacterGameplay GetAbilityValue CareerStats SeasonStats GameStats
+CharacterVisuals PLYR_PREVTEAMID ExperiencePoints LegacyScore SeasonHealthPool
+SkillPoints SeasonHealthPoolMax MaxInjuryDuration
+PLYR_DRAFTPICK PLYR_PERFORMLEVEL PrevTeamIndex TeamIndex InjurySeverity
+TEAM_TYPE WearAndTear_LLeg WearAndTear_LShoulder ConfidenceRating
+WearAndTear_LKnee Fatigue WearAndTear_RAnkle WearAndTear_Back
+MinInjuryDuration WearAndTear_LAnkle WearAndTear_LHip InjuryType
+WearAndTear_RArm WearAndTear_RElbow WearAndTear_LHand WearAndTear_RFoot
+WearAndTear_LArm WearAndTear_LElbow PLYR_DRAFTROUND TotalInjuryDuration
+NumPrideStickers LatestInjuryStage CurrentYearSeasonEndingInjuryWeek
+YearlyAwardCount InjuryStatus LastYearSeasonEndingInjuryWeek LatestInjuryWeek
+LatestInjuryYear Role WearAndTear_RLeg WearAndTear_RKnee WearAndTear_Rib
+WearAndTear_LFoot WearAndTear_RHip WearAndTear_RHand PlayoffRoundReached
+WearAndTear_RShoulder StartingHotCold PracticePlan IsInjuredReserve IsCreated
+IsUserControlled WasPreviouslyInjured PLYR_ICON NarrativeLock IsLegend
+`.trim().split(/\s+/));
+
+export const SPECIAL_PLACEHOLDER_FIELDS = Object.freeze(["TeamIndex"]);
+
+const overlap = TRANSFER_FIELDS.filter((field) => PRESERVED_FIELDS.includes(field));
+if (overlap.length) {
+  throw new Error(`Transfer/preserve field overlap: ${overlap.join(", ")}`);
+}
