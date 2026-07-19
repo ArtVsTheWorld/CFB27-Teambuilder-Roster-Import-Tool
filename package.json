@@ -10,6 +10,7 @@
   "files": [
     "src/",
     "engine-data/",
+    "runtime/",
     "docs/",
     "README.md",
     "TeambuilderRosterImportTool.bat"
